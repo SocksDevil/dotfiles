@@ -97,6 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lcom="ssh lcom@127.0.0.1 -p 2222"
+alias android-studio="sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh"
 # alias pip ="python /home/andrefmrocha/.local/bin"
 cs() { cd "$1" && ls; }
 neofetch

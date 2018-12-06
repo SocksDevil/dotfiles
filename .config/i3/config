@@ -274,6 +274,7 @@ exec xinput set-prop 14 287 1
 bindsym $sup+1 exec nautilus
 bindsym $sup+2 exec opera
 bindsym $sup+3 exec code
+bindsym $sup+a exec android-studio
 bindsym $sup+u exec pamac-manager
 exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
