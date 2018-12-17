@@ -143,6 +143,7 @@ for_window [class="Spotify"] move to workspace $ws4
 for_window [class= "Slack"] move to workspace $ws7
 for_window [class = "VirtualBox Machine"] move to workspace $ws5
 for_window [class= "jetbrains-clion"] move to workspace $ws1
+for_window [class="jetbrains-studio"] move to workspace $ws1
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -274,7 +275,7 @@ exec xinput set-prop 14 287 1
 bindsym $sup+1 exec nautilus
 bindsym $sup+2 exec opera
 bindsym $sup+3 exec code
-bindsym $sup+a exec android-studio
+bindsym $sup+a exec sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh
 bindsym $sup+u exec pamac-manager
 exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
 

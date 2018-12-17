@@ -101,3 +101,4 @@ alias android-studio="sh /home/andrefmrocha/Downloads/android-studio/bin/studio.
 # alias pip ="python /home/andrefmrocha/.local/bin"
 cs() { cd "$1" && ls; }
 neofetch
+source /usr/share/nvm/init-nvm.sh
