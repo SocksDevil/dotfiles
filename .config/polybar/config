@@ -26,7 +26,7 @@ font-2 = "Font Awesome 5 Brands:size=10;1"
 
 modules-left = i3 spotify date
 modules-center = caffeine
-modules-right = wlan_primary battery backlight pulseaudio powermenu
+modules-right = wlan_primary memory battery backlight pulseaudio powermenu
 
 tray-position =
 ;tray-padding =
@@ -432,3 +432,47 @@ content = %{A1:notify-send "Caffeine enabled" | caffeine -a:}%{A}
 # menu-0-1-exec = caffeine -d
 # menu-0-2 = 
 # menu-0-2-exec = caffeine kill
+
+
+[module/memory]
+type = internal/memory
+interval = 3
+format = <label>
+label =  %gb_used%/%gb_free%
+
+label-foreground = #7E807E
+
+; Only applies if <bar-used> is used
+bar-used-indicator = #7E807E
+bar-used-width = 10
+bar-used-foreground-0 = #55aa55
+bar-used-foreground-1 = #557755
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ff5555
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-empty-foreground = #444444
+
+; Only applies if <ramp-used> is used
+ramp-used-0 = ▁
+ramp-used-1 = ▂
+ramp-used-2 = ▃
+ramp-used-3 = ▄
+ramp-used-4 = ▅
+ramp-used-5 = ▆
+ramp-used-6 = ▇
+ramp-used-7 = █
+
+; Only applies if <ramp-free> is used
+ramp-free-0 = ▁
+ramp-free-1 = ▂
+ramp-free-2 = ▃
+ramp-free-3 = ▄
+ramp-free-4 = ▅
+ramp-free-5 = ▆
+ramp-free-6 = ▇
+ramp-free-7 = █
+[module/ram]
+type = custom/text
+content-foreground = #7E807E
+content = %{A1:notify-send " $(free -h)" -t 2000:}%{A}

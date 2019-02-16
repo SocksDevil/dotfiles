@@ -64,7 +64,34 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  svn
 )
+
+prompt_svn() {
+    local rev branch
+    if in_svn; then
+        rev=$(svn_get_rev_nr)
+        branch=$(svn_get_branch_name)
+        if [ `svn_dirty_choose_pwd 1 0` -eq 1 ]; then
+            prompt_segment yellow black
+            echo -n "$rev@$branch"
+            echo -n "±"
+        else
+            prompt_segment green black
+            echo -n "$rev@$branch"
+        fi
+    fi
+}
+
+build_prompt() {
+    RETVAL=$?
+    prompt_status
+    prompt_context
+    prompt_dir
+    prompt_git
+    prompt_svn
+    prompt_end
+}
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,8 +124,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lcom="ssh lcom@127.0.0.1 -p 2222"
+alias lcom2="ssh lcom@127.0.0.1 -p 2223"
 alias android-studio="sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh"
 # alias pip ="python /home/andrefmrocha/.local/bin"
 cs() { cd "$1" && ls; }
 neofetch
 source /usr/share/nvm/init-nvm.sh
+powerline-daemon -q
+export PATH="$PATH:/home/andrefmrocha/Flutter/flutter/bin"
+. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh

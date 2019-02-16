@@ -138,12 +138,12 @@ assign [class="code"] $ws1
 assign [class="Nautilus"] $ws6
 assign [class="Messenger for Desktop"] $ws3
 assign [class="Franz"] $ws3
+assign [class = "Rambox"] $ws3
 exec spotify
 for_window [class="Spotify"] move to workspace $ws4
 for_window [class= "Slack"] move to workspace $ws7
 for_window [class = "VirtualBox Machine"] move to workspace $ws5
-for_window [class= "jetbrains-clion"] move to workspace $ws1
-for_window [class="jetbrains-studio"] move to workspace $ws1
+for_window [class="Chromium"] move to workspace $ws2
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -243,8 +243,8 @@ set $height 34
 # }
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
@@ -277,6 +277,7 @@ bindsym $sup+2 exec opera
 bindsym $sup+3 exec code
 bindsym $sup+a exec sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh
 bindsym $sup+u exec pamac-manager
+bindsym $sup+s exec deepin-screenshot
 exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
 exec compton
@@ -284,5 +285,5 @@ exec xinput set-prop 14 287 1
 exec dunst -conf ~/.config/i3/dunstconf
 
 #exec ~/Messenger/messengerfordesktop
-exec franz
+exec rambox
 workspace_auto_back_and_forth yes
