@@ -152,12 +152,12 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${color.background}
-format-connected-background = ${color.foreground-alt}
+format-connected-background = ${color.background}
+format-connected-foreground = ${color.foreground-alt}
 format-connected-padding = 1
 label-connected = %essid%
-label-connected-foreground = ${color.background}
-label-connected-background = ${color.foreground-alt}
+label-connected-background = ${color.background}
+label-connected-for = ${color.foreground-alt}
 label-connected-padding = 1
 format-disconnected =
 
@@ -166,7 +166,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${color.background}
+ramp-signal-background = ${color.background}
 
 [module/wlan_primary]
 type = internal/network
@@ -194,15 +194,15 @@ interface = enp2s0
 interval = 3.0
 
 format-connected-padding = 2
-format-connected-foreground = ${color.background}
-format-connected-background = ${color.foreground-alt}
+format-connected-background = ${color.background}
+format-connected-foreground = ${color.foreground-alt}
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${color.background}
+format-connected-prefix-background = ${color.background}
 format-disconnected-padding = 2
 format-disconnected-foreground = ${color.foreground-alt}
 format-disconnected-background = ${color.background}
 format-disconnected-prefix = " "
-format-disconnected-prefix-foreground = ${color.background}
+format-disconnected-prefix-foreground = ${color.foreground-alt}
 label-connected = on
 
 format-disconnected = off
