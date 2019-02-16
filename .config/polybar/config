@@ -1,75 +1,121 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   Modified By Andre Rocha.
+;
+;==========================================================
+
+[color]
+background = #1F1F1F
+foreground = #FFFFFF
+foreground-alt = #A9ABB0
+red = #FF5050
+green = #4c177d
+green-alt = #50F97B
+blue = #3A71C1
+cyan = #00bcd4
+white = #FFFFFF
+black = #000000
+trans = #00000000
+
+;==========================================================
+
 [bar/i3wmthemer_bar]
 monitor = ${env:MONITOR:eDP1}
 width = 100%
-height = 27
-radius = 0
+height = 40
+offset-x = 5%
+offset-y = 2%
 fixed-center = false
+line-size = 2
 
-background = #272827
-foreground = #657b83
+background = ${color.background}
+foreground = ${color.foreground-alt}
 
-line-size = 3
-line-color =
-
-border-size = 0
-border-color =
-
-padding-left = 0
-padding-right = 2
+border-size = 3
+border-color = ${color.background}
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
+
+;==========================================================
 
 font-0 = "Source Code Pro Semibold:size=10;1"
 font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-2 = "Font Awesome 5 Brands:size=10;1"
 
-modules-left = i3 spotify date
-modules-center = caffeine
-modules-right = wlan_primary memory battery backlight pulseaudio powermenu
-
-tray-position =
-;tray-padding =
+;==========================================================
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+;tray-position = right
+;tray-padding = 0
+;tray-maxsize = 16
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+;== Module Location ========================================================
+
+modules-left = i3 spotify 
+modules-center = date 
+modules-right = caffeine wlan_primary memory battery backlight pulseaudio powermenu
+ 
 
 [bar/left_bar]
 monitor = ${env:MONITOR:DP1}
 width = 100%
-height = 27
-radius = 0
+height = 40
+offset-x = 5%
+offset-y = 2%
 fixed-center = false
+line-size = 2
 
-background = #272827
-foreground = #657b83
+background = ${color.background}
+foreground = ${color.foreground-alt}
 
-line-size = 3
-line-color =
-
-border-size = 0
-border-color =
-
-padding-left = 0
-padding-right = 2
+border-size = 3
+border-color = ${color.background}
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
+
+;==========================================================
 
 font-0 = "Source Code Pro Semibold:size=10;1"
 font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-2 = "Font Awesome 5 Brands:size=10;1"
 
-modules-left = i3 spotify-2 date
-modules-center = 
-modules-right = wlan eth powermenu
-
-tray-position =
-;tray-padding =
+;==========================================================
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+;tray-position = right
+;tray-padding = 0
+;tray-maxsize = 16
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+;== Module Location ========================================================
+
+modules-left = i3 spotify-2 
+modules-center = date
+modules-right = wlan eth powermenu
+ 
+
+
+;== Modules ========================================================
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -77,26 +123,27 @@ index-sort = true
 wrapping-scroll = false
 pin-workspaces = true
 label-mode-padding = 2
-label-mode-foreground = #657b83
-label-mode-background = #272827
+label-mode-foreground = ${color.foreground}
+label-mode-background = ${color.background}
 
 label-focused = %name%
-label-focused-background = #7E807E
-label-focused-foreground = #272827
+label-focused-background = ${color.background}
+label-focused-underline = ${color.green}
+label-focused-foreground = ${color.green}
 label-focused-padding = 2
 
 label-unfocused = %name%
-label-unfocused-background = #272827
-label-unfocused-foreground = #7E807E
+label-unfocused-background = ${color.background}
+label-unfocused-foreground = ${color.foreground-alt}
 label-unfocused-padding = 2
 
 label-visible = %name%
-label-visible-background = #7E807E
-label-visible-foreground = #272827
+label-visible-background = ${color.background}
+label-visible-foreground = ${color.foreground-alt}
 label-visible-padding = 2
 
 label-urgent = %name%
-label-urgent-background = #AA2922
+label-urgent-background = ${color.red}
 label-urgent-padding = 2
 
 [module/wlan]
@@ -105,12 +152,12 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = #7E807E
-format-connected-background = #272827
+format-connected-foreground = ${color.background}
+format-connected-background = ${color.foreground-alt}
 format-connected-padding = 1
 label-connected = %essid%
-label-connected-foreground = #7E807E
-label-connected-background = #272827
+label-connected-foreground = ${color.background}
+label-connected-background = ${color.foreground-alt}
 label-connected-padding = 1
 format-disconnected =
 
@@ -119,7 +166,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = #7E807E
+ramp-signal-foreground = ${color.background}
 
 [module/wlan_primary]
 type = internal/network
@@ -127,11 +174,11 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = %{A1:notify-send " $(iw wlp3s0 link | grep "SSID")" -t 2000:}<ramp-signal>%{A}
-format-connected-foreground = #7E807E
-format-connected-background = #272827
+format-connected-foreground = ${color.foreground-alt}
+format-connected-background = ${color.background}
 label-connected = 
-label-connected-foreground = #7E807E
-label-connected-background = #272827
+label-connected-foreground = ${color.foreground-alt}
+label-connected-background = ${color.background}
 format-disconnected =
 
 ramp-signal-0 = 
@@ -139,7 +186,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = #7E807E
+ramp-signal-foreground = ${color.foreground-alt}
 
 [module/eth]
 type = internal/network
@@ -147,15 +194,15 @@ interface = enp2s0
 interval = 3.0
 
 format-connected-padding = 2
-format-connected-foreground = #7E807E
-format-connected-background = #272827
+format-connected-foreground = ${color.background}
+format-connected-background = ${color.foreground-alt}
 format-connected-prefix = " "
-format-connected-prefix-foreground = #7E807E
+format-connected-prefix-foreground = ${color.background}
 format-disconnected-padding = 2
-format-disconnected-foreground = #272827
-format-disconnected-background = #7E807E
+format-disconnected-foreground = ${color.foreground-alt}
+format-disconnected-background = ${color.background}
 format-disconnected-prefix = " "
-format-disconnected-prefix-foreground = #7E807E
+format-disconnected-prefix-foreground = ${color.background}
 label-connected = on
 
 format-disconnected = off
@@ -171,8 +218,8 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-foreground = #7E807E
-format-background = #272827
+format-background = ${color.background}
+format-foreground = ${color.foreground-alt}
 format-padding = 2
 
 label = %date% %time%
@@ -182,12 +229,12 @@ type = internal/battery
 
 ; This is useful in case the battery never reports 100% charge
 full-at = 99
-format-discharging-foreground = #7E807E
+format-discharging-background = ${color.background}
 format-discharging-margin = 0
 format-charging-margin = 0
-format-charging-foreground = #7E807E
-format-charging-background = #272827
-format-discharging-background = #272827
+format-charging-background = ${color.background}
+format-charging-foreground = ${color.foreground-alt}
+format-discharging-foreground = ${color.foreground-alt}
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/
 battery = BAT1
@@ -280,11 +327,11 @@ expand-right = true
 format-spacing = 1
 
 label-open = 
-label-open-foreground = #7E807E
+label-open-background = ${color.background}
 label-close =  cancel
-label-close-foreground = #7E807E
+label-close-background = ${color.background}
 label-separator = |
-label-separator-foreground = #7E807E
+label-separator-background = ${color.background}
 
 
 menu-0-0 = reboot
@@ -332,8 +379,8 @@ use-ui-max = true
 interval = 5
 
 
-format-volume-foreground = #7E807E
-format-volume-background = #272827
+format-volume-background = ${color.background}
+format-volume-foreground = ${color.foreground-alt}
 format-volume-padding = 1
 format-volume = <ramp-volume> <label-volume>
 
@@ -351,8 +398,8 @@ format-muted = <label-muted>
 ;   %percentage% (default)
 label-muted = 🔇 muted
 label-muted-foreground = #666
-format-muted-foreground = #7E807E
-format-muted-background = #272827
+format-muted-background = ${color.background}
+format-muted-foreground = ${color.foreground-alt}
 format-muted-padding = 1
 
 ; Only applies if <ramp-volume> is used
@@ -375,8 +422,8 @@ enable-scroll = false
 ;   <label> (default)
 ;   <ramp>
 ;   <bar>
-format-background = #272827
-format-foreground = #7E807E
+format-foreground = ${color.foreground-alt}
+format-background = ${color.background}
 format = <bar>
 
 ; Available tokens:
@@ -401,8 +448,8 @@ type = custom/script
 interval = 1
 format = <label>
 exec = python ~/.config/polybar/scripts/spotify_status.py -f '{play_pause}'
-format-background = #272827
-format-foreground = #7E807E
+format-foreground = ${color.foreground-alt}
+format-background = ${color.background}
 
 
 [module/spotify-2]
@@ -410,14 +457,14 @@ type = custom/script
 interval = 1
 format = <label>
 exec = python ~/.config/polybar/scripts/spotify_status.py -p '[playing],[paused]'
-format-background = #272827
-format-foreground = #7E807E
+format-foreground = ${color.foreground-alt}
+format-background = ${color.background}
 
 [module/caffeine]
 type = custom/text
 
-content-foreground = #7E807E
-# label-close-foreground = #7E807E
+content-background = ${color.background}
+# label-close-foreground = ${color.background}
 content = %{A1:notify-send "Caffeine enabled" | caffeine -a:}%{A}
 # label-close = 
 # label-open-padding = 0
@@ -440,10 +487,10 @@ interval = 3
 format = <label>
 label =  %gb_used%/%gb_free%
 
-label-foreground = #7E807E
+label-foreground = ${color.foreground-alt}
 
 ; Only applies if <bar-used> is used
-bar-used-indicator = #7E807E
+bar-used-indicator = ${color.background}
 bar-used-width = 10
 bar-used-foreground-0 = #55aa55
 bar-used-foreground-1 = #557755
@@ -474,5 +521,4 @@ ramp-free-6 = ▇
 ramp-free-7 = █
 [module/ram]
 type = custom/text
-content-foreground = #7E807E
-content = %{A1:notify-send " $(free -h)" -t 2000:}%{A}
+content-foreground = ${color.background}
