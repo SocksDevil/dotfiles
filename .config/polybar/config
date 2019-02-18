@@ -25,6 +25,7 @@ cyan = #00bcd4
 white = #FFFFFF
 black = #000000
 trans = #00000000
+yellow = #ffffcc
 
 ;==========================================================
 
@@ -186,7 +187,9 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${color.foreground-alt}
+ramp-signal-foreground = ${color.green-alt}
+ramp-signal-underline = ${color.green-alt}
+
 
 [module/eth]
 type = internal/network
@@ -233,8 +236,10 @@ format-discharging-background = ${color.background}
 format-discharging-margin = 0
 format-charging-margin = 0
 format-charging-background = ${color.background}
-format-charging-foreground = ${color.foreground-alt}
-format-discharging-foreground = ${color.foreground-alt}
+format-charging-foreground = ${color.cyan}
+format-charging-underline = ${color.cyan}
+format-discharging-foreground = ${color.cyan}
+format-discharging-underline = ${color.cyan}
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/
 battery = BAT1
@@ -380,7 +385,8 @@ interval = 5
 
 
 format-volume-background = ${color.background}
-format-volume-foreground = ${color.foreground-alt}
+format-volume-foreground = ${color.green-alt}
+format-volume-underline = ${color.green-alt}
 format-volume-padding = 1
 format-volume = <ramp-volume> <label-volume>
 
@@ -422,7 +428,8 @@ enable-scroll = false
 ;   <label> (default)
 ;   <ramp>
 ;   <bar>
-format-foreground = ${color.foreground-alt}
+format-foreground = ${color.yellow}
+format-underline = ${color.yellow}
 format-background = ${color.background}
 format = <bar>
 
@@ -448,7 +455,7 @@ type = custom/script
 interval = 1
 format = <label>
 exec = python ~/.config/polybar/scripts/spotify_status.py -f '{play_pause}'
-format-foreground = ${color.foreground-alt}
+format-foreground = ${color.green}
 format-background = ${color.background}
 
 
@@ -464,6 +471,8 @@ format-background = ${color.background}
 type = custom/text
 
 content-background = ${color.background}
+content-foreground = ${color.green}
+content-underline = ${color.green}
 # label-close-foreground = ${color.background}
 content = %{A1:notify-send "Caffeine enabled" | caffeine -a:}%{A}
 # label-close = 
@@ -487,7 +496,8 @@ interval = 3
 format = <label>
 label =  %gb_used%/%gb_free%
 
-label-foreground = ${color.foreground-alt}
+label-foreground = ${color.blue}
+label-underline = ${color.blue}
 
 ; Only applies if <bar-used> is used
 bar-used-indicator = ${color.background}
