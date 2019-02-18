@@ -128,7 +128,6 @@ alias lcom2="ssh lcom@127.0.0.1 -p 2223"
 alias android-studio="sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh"
 # alias pip ="python /home/andrefmrocha/.local/bin"
 cs() { cd "$1" && ls; }
-neofetch
 source /usr/share/nvm/init-nvm.sh
 powerline-daemon -q
 export PATH="$PATH:/home/andrefmrocha/Flutter/flutter/bin"
