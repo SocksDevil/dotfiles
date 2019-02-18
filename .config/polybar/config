@@ -154,7 +154,8 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-background = ${color.background}
-format-connected-foreground = ${color.foreground-alt}
+format-connected-foreground = ${color.green-alt}
+format-connected-underline = ${color.green-alt}
 format-connected-padding = 1
 label-connected = %essid%
 label-connected-background = ${color.background}
@@ -198,14 +199,16 @@ interval = 3.0
 
 format-connected-padding = 2
 format-connected-background = ${color.background}
-format-connected-foreground = ${color.foreground-alt}
+format-connected-foreground = ${color.green}
+format-connected-underline = ${color.green}
 format-connected-prefix = " "
 format-connected-prefix-background = ${color.background}
 format-disconnected-padding = 2
-format-disconnected-foreground = ${color.foreground-alt}
+format-disconnected-foreground = ${color.red}
+format-disconnected-underline = ${color.red}
 format-disconnected-background = ${color.background}
 format-disconnected-prefix = " "
-format-disconnected-prefix-foreground = ${color.foreground-alt}
+format-disconnected-prefix-foreground = ${color.red}
 label-connected = on
 
 format-disconnected = off
