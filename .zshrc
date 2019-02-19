@@ -3,12 +3,25 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/andrefmrocha/.oh-my-zsh"
+  export ZPLUG_HOME=/home/andrefmrocha/.zplug
+
+  source $ZPLUG_HOME/init.zsh
+
+ zplug clear
+#################################################################################
+# Packages
+#
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+##########################################
+# Theme
+ zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -123,12 +136,32 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+#
+###########################################################
+# Install packages that have not been installed yet
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    else
+        echo
+    fi
+fi
+
+zplug load
+
+
 alias lcom="ssh lcom@127.0.0.1 -p 2222"
 alias lcom2="ssh lcom@127.0.0.1 -p 2223"
 alias android-studio="sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh"
 # alias pip ="python /home/andrefmrocha/.local/bin"
 cs() { cd "$1" && ls; }
+alias gtree="git fetch && git log --graph --abbrev-commit --decorate --format=format:'%C(bold
+blue)%h%C(reset) - %C(bold
+cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)-
+%an%C(reset)' --all" -g
 source /usr/share/nvm/init-nvm.sh
-powerline-daemon -q
+#powerline-daemon -q
 export PATH="$PATH:/home/andrefmrocha/Flutter/flutter/bin"
-. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+#. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
