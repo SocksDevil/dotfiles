@@ -69,7 +69,7 @@ scroll-down = i3wm-wsprev
 
 modules-left = i3 spotify 
 modules-center = date 
-modules-right = caffeine wlan_primary memory battery backlight pulseaudio powermenu
+modules-right = screen_autolock wlan_primary memory battery backlight pulseaudio powermenu
  
 
 [bar/left_bar]
@@ -535,3 +535,22 @@ ramp-free-7 = █
 [module/ram]
 type = custom/text
 content-foreground = ${color.background}
+
+[module/screen_autolock]
+type = custom/script
+
+exec = $HOME/.config/polybar/scripts/autolock_polybar.sh
+
+interval = 1
+
+format = <label>
+
+;No need for truncating since only 1 character is being displayed
+label = %output%
+label-foreground = ${color.green}
+label-underline = ${color.green}
+
+;tail = true
+
+; Clicking with left button toggles the autolock state
+click-left = exec $HOME/.config/polybar/scripts/toggle_autolock.sh

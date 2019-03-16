@@ -9,8 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
-set $sup Mod4
+set $mod Mod4
+set $sup Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -134,11 +134,13 @@ assign [class="Spotif2y Premium"] $ws4
 assign [class="Termite"] $ws5
 assign [class="VirtualBox Machine"] $ws5
 assign [class="Opera"] $ws2
+assign [class="Brave-browser"] $ws2
 assign [class="code"] $ws1
 assign [class="Nautilus"] $ws6
 assign [class="Messenger for Desktop"] $ws3
 assign [class="Franz"] $ws3
 assign [class = "Rambox"] $ws3
+assign [class = "Foxit Reader"] $ws6
 exec spotify
 for_window [class="Spotify"] move to workspace $ws4
 for_window [class= "Slack"] move to workspace $ws7
@@ -209,7 +211,7 @@ set $bg-color 	         #272827
 set $inactive-bg-color   #272827
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color     #AA2922
+set $urgent-bg-color     #FF5050
 
 # window colors
 #                       border              background         text                 indicator
@@ -266,22 +268,25 @@ exec xrandr --output HDMI2 --off --output HDMI1 --off --output DP1 --mode 1440x9
 
 exec_always feh --bg-scale /home/andrefmrocha/Pictures/Space.png
 
-exec opera
+exec brave
 
 exec sh ~/.config/i3/mouse.sh
 
 exec xinput set-prop 14 287 1
 
 bindsym $sup+1 exec nautilus
-bindsym $sup+2 exec opera
+bindsym $sup+2 exec brave
 bindsym $sup+3 exec code
 bindsym $sup+a exec sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh
 bindsym $sup+u exec pamac-manager
-bindsym $sup+s exec deepin-screenshot
+bindsym Print exec deepin-screenshot
 exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
 exec compton
-exec xinput set-prop 14 287 1
+exec xinput set-prop 14 288 1
+exec xinput set-prop 14 306 1 
+exec xinput set-prop 15 288 1
+exec xinput set-prop 15 306 1 
 exec dunst -conf ~/.config/i3/dunstconf
 
 #exec ~/Messenger/messengerfordesktop
