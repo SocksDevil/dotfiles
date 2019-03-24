@@ -106,8 +106,15 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $main_monitor eDP1
+#Binding Workspaces to screen
+workspace $ws1 output $main_monitor
+workspace $ws3 output $main_monitor
+workspace $ws4 output $main_monitor
+
+
 # switch to workspace
-bindsym $mod+1 workspace $ws1
+bindsym $mod+1 workspace $ws1 
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
