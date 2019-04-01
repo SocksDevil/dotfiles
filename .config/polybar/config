@@ -44,7 +44,7 @@ tray-position = center
 tray-background = ${color.background}
 
 tray-detached = false
-tray-margin-bottom = 2
+tray-offset-x = 50
 
 border-size = 3
 border-color = ${color.background}
