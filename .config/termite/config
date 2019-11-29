@@ -1,51 +1,50 @@
+## Termite Styling Program
+## Author : Aditya Shakya
+
+[options]
+
+allow_bold = true
+audible_bell = true
+browser = xdg-open
+clickable_url = true
+cursor_blink = system
+cursor_shape = block
+dynamic_title = true
+filter_unmatched_urls = true
+font = Iosevka Nerd Font 10
+geometry = 480x280
+icon_name = terminal
+modify_other_keys = false
+mouse_autohide = false
+scroll_on_output = false
+scroll_on_keystroke = true
+scrollback_lines = 15000
+size_hints = false
+search_wrap = true
+urgent_on_bell = true
+highlight = #30343e
+
 [colors]
-# Base16 Dracula
-# Author: Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula)
 
-foreground          = #e9e9f4
-foreground_bold     = #f1f2f8
-cursor              = #f1f2f8
-cursor_foreground   = #282936
-background          = #272827
+# https://github.com/mashaal/wild-cherry
 
-# 16 color space
+background= #1F1626
+foreground= #FFFFFF
+cursor=     #0F9DBA
 
-# Black, Gray, Silver, White
-color0  = #282936
-color8  = #4d4f68
-color7  = #e9e9f4
-color15 = #f7f7fb
-
-# Red
-color1  = #ea51b2
-color9  = #ea51b2
-
-# Green
-color2  = #00f769
-color10 = #00f769
-
-# Yellow
-color3  = #ebff87
-color11 = #ebff87
-
-# Blue
-color4  = #62d6e8
-color12 = #62d6e8
-
-# Purple
-color5  = #b45bcf
-color13 = #b45bcf
-
-# Teal
-color6  = #a1efe4
-color14 = #a1efe4
-
-# Extra colors
-color16 = #b45bcf
-color17 = #00f769
-color18 = #3a3c4e
-color19 = #626483
-color20 = #62d6e8
-color21 = #f1f2f8
-
-browser=opera
+color0=   #099BD7
+color10=  #2AB250
+color11=  #FFD16F
+color12=  #883CDB
+color13=  #099BD7
+color14=  #4F5D95
+color15=  #FFF8DE
+color1=   #D94085
+color2=   #2AB250
+color3=   #FFD16F
+color4=   #883CDC
+color5=   #0F9DBA
+color6=   #4F5D95
+color7=   #FFF8DD
+color8=   #099BD7
+color9=   #D94084

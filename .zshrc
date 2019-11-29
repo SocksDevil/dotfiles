@@ -14,15 +14,16 @@
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
+zplug mafredri/zsh-async, from:github
 ##########################################
 # Theme
- zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
+#ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,34 +79,34 @@ zplug "zsh-users/zsh-autosuggestions"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  svn
+#  svn
 )
 
-prompt_svn() {
-    local rev branch
-    if in_svn; then
-        rev=$(svn_get_rev_nr)
-        branch=$(svn_get_branch_name)
-        if [ `svn_dirty_choose_pwd 1 0` -eq 1 ]; then
-            prompt_segment yellow black
-            echo -n "$rev@$branch"
-            echo -n "±"
-        else
-            prompt_segment green black
-            echo -n "$rev@$branch"
-        fi
-    fi
-}
+# prompt_svn() {
+#    local rev branch
+#    if in_svn; then
+#        rev=$(svn_get_rev_nr)
+#        branch=$(svn_get_branch_name)
+#        if [ `svn_dirty_choose_pwd 1 0` -eq 1 ]; then
+#            prompt_segment yellow black
+#            echo -n "$rev@$branch"
+#            echo -n "±"
+#        else
+#            prompt_segment green black
+#            echo -n "$rev@$branch"
+#        fi
+#    fi
+#}
 
-build_prompt() {
-    RETVAL=$?
-    prompt_status
-    prompt_context
-    prompt_dir
-    prompt_git
-    prompt_svn
-    prompt_end
-}
+# build_prompt() {
+#    RETVAL=$?
+#    prompt_status
+#    prompt_context
+#    prompt_dir
+#    prompt_git
+#    prompt_svn
+#    prompt_end
+#}
 
 source $ZSH/oh-my-zsh.sh
 
@@ -153,9 +154,9 @@ fi
 zplug load
 
 
-alias lcom="ssh lcom@127.0.0.1 -p 2222"
-alias lcom2="ssh lcom@127.0.0.1 -p 2223"
-alias android-studio="sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh"
+#alias lcom="ssh lcom@127.0.0.1 -p 2222"
+#alias lcom2="ssh lcom@127.0.0.1 -p 2223"
+#alias android-studio="sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh"
 # alias pip ="python /home/andrefmrocha/.local/bin"
 cs() { cd "$1" && ls; }
 alias gtree="git fetch && git log --graph --abbrev-commit --decorate --format=format:'%C(bold
@@ -165,4 +166,17 @@ cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(
 source /usr/share/nvm/init-nvm.sh
 #powerline-daemon -q
 export PATH="$PATH:/home/andrefmrocha/Flutter/flutter/bin"
+export PATH="$PATH:/root/.gem/ruby/2.6.0/bin"
 #. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export BROWSER="usr/bin/firefox"
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
+
+export XDG_CURRENT_DESKTOP=GNOME
+alias sicstus="wine ~/.wine/drive_c/Program\ Files/SICStus\ Prolog\ VC15\ 4.5.1/bin/sicstus-4.5.1.exe"
+alias rcom="ssh -p 3022 andrefmrocha@127.0.0.1"
+alias rcom2="ssh -p 3023 andrefmrocha@127.0.0.1"
