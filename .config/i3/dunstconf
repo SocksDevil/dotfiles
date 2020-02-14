@@ -68,12 +68,12 @@
     # corner_radius = 6
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
-    transparency = 30
+    transparency = 10
  
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
     # Set to 0 to disable.
-    idle_threshold = 999
+    idle_threshold = 60
  
     # Which monitor should the notifications be displayed on.
     monitor = 0
@@ -139,7 +139,7 @@
 
 [frame]
     width = 1
-    color = "#7E807E"
+    color = "#75A4CD"
  
 [shortcuts]
     # shortcuts are specified as [modifier+][modifier+]...key
@@ -163,17 +163,17 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#07151A"
+    background = "#212121"
     foreground = "#7E807E"
     timeout = 5
  
 [urgency_normal]
-    background = "#07151A"
+    background = "#212121"
     foreground = "#7E807E"
     timeout = 5
  
 [urgency_critical]
-    background = "#07151A"
+    background = "#212121"
     foreground = "#e8e5e2"
     timeout = 5
  

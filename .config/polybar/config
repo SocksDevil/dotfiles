@@ -294,7 +294,7 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 ; Use the specified monitor as a fallback if the main one is not found.
-monitor-fallback =${env:MONITOR:HDM1}
+monitor-fallback =${env:MONITOR:HDMI1}
 
 ; Require the monitor to be in connected state
 ; XRandR sometimes reports my monitor as being disconnected (when in use)
