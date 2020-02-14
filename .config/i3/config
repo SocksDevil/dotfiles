@@ -194,7 +194,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 bindsym $sup+l exec i3lock-fancy-dualmonitor
-bindsym $mod+d exec rofi -show run -lines 10 -eh 2 -width 100 -height 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
+bindsym $mod+q exec rofi -show drun -lines 5 -eh 2 -width 50 -height 60 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
+bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 50 -height 60 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
 bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 bindsym $sup+Tab workspace back_and_forth
 
@@ -303,7 +304,7 @@ bindsym $sup+3 exec code
 bindsym $sup+a exec sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh
 bindsym $sup+u exec pamac-manager
 bindsym Print exec flameshot gui
-exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
+exec_always --no-startup-id /$HOME/.config/polybar/launch.sh
 
 exec compton
 exec dunst -conf ~/.config/i3/dunstconf
