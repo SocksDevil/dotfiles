@@ -180,3 +180,5 @@ export XDG_CURRENT_DESKTOP=GNOME
 alias sicstus="wine ~/.wine/drive_c/Program\ Files/SICStus\ Prolog\ VC15\ 4.5.1/bin/sicstus-4.5.1.exe"
 alias rcom="ssh -p 3022 andrefmrocha@127.0.0.1"
 alias rcom2="ssh -p 3023 andrefmrocha@127.0.0.1"
+
+eval $(thefuck --alias)
