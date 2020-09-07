@@ -111,6 +111,7 @@ set $main_monitor eDP1
 workspace $ws1 output $main_monitor
 workspace $ws3 output $main_monitor
 workspace $ws4 output $main_monitor
+workspace $ws7 output $main_monitor
 
 
 # switch to workspace
@@ -153,13 +154,14 @@ assign [class = "Station"] $ws3
 assign [class = "Foxit Reader"] $ws6
 assign [class = "okular"] $ws6
 assign [class = "firefox"] $ws2
+assign [class = "Vivaldi-stable"] $ws2
 exec spotify
-exec station
 for_window [class="Spotify"] move to workspace $ws4
 for_window [class= "Slack"] move to workspace $ws7
 for_window [class = "VirtualBox Machine"] move to workspace $ws5
 for_window [class="Chromium"] move to workspace $ws2
 for_window [title=".*Emulator.*"] floating enable
+for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -193,10 +195,10 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bindsym $sup+l exec i3lock-fancy-dualmonitor
-bindsym $mod+q exec rofi -show drun -lines 5 -eh 2 -width 50 -height 60 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 50 -height 60 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
-bindsym $mod+o exec rofi -show window -lines 5 -eh 2 -width 50 -height 60 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
+# bindsym $sup+l exec i3lock-fancy-dualmonitor
+bindsym $mod+q exec rofi -show drun -lines 5 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
+bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
+bindsym $mod+o exec rofi -show window -lines 5 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
 bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 bindsym $sup+Tab workspace back_and_forth
 
@@ -263,7 +265,7 @@ set $height 34
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 6 toggle # mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -281,37 +283,37 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always:
 
 exec xrandr --output HDMI2 --off --output HDMI1 --off --output DP1 --mode 1440x900 --pos 1366x0 --rotate normal --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output VIRTUAL1 --off 
+exec xrandr --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output HDMI1 --mode 1920x1080 --pos 1366x0 --rotate normal --output HDMI2 --off --output VIRTUAL1 --off
 
-exec_always feh --bg-scale /home/andrefmrocha/Pictures/psychedelic1.jpg
+exec_always feh --bg-scale /home/andrefmrocha/Pictures/minimalism.png
 
-exec firefox
+exec vivaldi-stable
+exec slack
 
 exec sh ~/.config/i3/mouse.sh
 
-exec xinput set-prop 13 310 1  
-exec xinput set-prop 13 302 1  
-exec xinput set-prop 13 303 1  
-exec xinput set-prop 13 311 1  
-exec xinput set-prop 13 306 1 
-exec xinput set-prop 13 314 1 
-exec xinput set-prop 14 303 1  
-exec xinput set-prop 14 321 1  
-exec xinput set-prop 14 302 1 
-
-
 bindsym $sup+1 exec Thunar
-bindsym $sup+2 exec firefox
+bindsym $sup+2 exec vivaldi-stable
 bindsym $sup+3 exec code
 bindsym $sup+a exec sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh
 bindsym $sup+u exec pamac-manager
+bindsym Control+Space exec killall xfce4-notifyd  
 bindsym Print exec flameshot gui
 exec_always --no-startup-id /$HOME/.config/polybar/launch.sh
 
 exec compton
 exec dunst -conf ~/.config/i3/dunstconf
-exec_always --no-startup-id sh -c "pkill fusuma; fusuma -d"
+# exec /usr/lib/xfce4/notifyd/xfce4-notifyd
+exec_always --no-startup-id sh -c "pkill fusuma && fusuma -d"
 
 #exec ~/Messenger/messengerfordesktop
 workspace_auto_back_and_forth yes
 exec greenclip daemon
-exec blueman-applet
+exec blueman-applet 
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec --no-startup-id redshift
+exec --no-startup-id nm-applet
+exec --no-startup-id . ~/.asdf/plugins/java/set-java-home.sh
+#exec --no-startup-id ~/.config/audio.sh
+
+

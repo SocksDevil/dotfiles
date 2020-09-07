@@ -2,8 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/andrefmrocha/.oh-my-zsh"
-  export ZPLUG_HOME=/home/andrefmrocha/.zplug
+  export ZSH="~/.oh-my-zsh"
+  export ZPLUG_HOME=~/.zplug
 
   source $ZPLUG_HOME/init.zsh
 
@@ -156,21 +156,20 @@ zplug load
 
 #alias lcom="ssh lcom@127.0.0.1 -p 2222"
 #alias lcom2="ssh lcom@127.0.0.1 -p 2223"
-#alias android-studio="sh /home/andrefmrocha/Downloads/android-studio/bin/studio.sh"
-# alias pip ="python /home/andrefmrocha/.local/bin"
+#alias android-studio="sh ~/Downloads/android-studio/bin/studio.sh"
+# alias pip ="python ~/.local/bin"
 cs() { cd "$1" && ls; }
 alias gtree="git fetch && git log --graph --abbrev-commit --decorate --format=format:'%C(bold
 blue)%h%C(reset) - %C(bold
 cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)-
 %an%C(reset)' --all" -g
-source /usr/share/nvm/init-nvm.sh
 #powerline-daemon -q
-export PATH="$PATH:/home/andrefmrocha/Flutter/flutter/bin"
+export PATH="$PATH:~/Flutter/flutter/bin"
 export PATH="$PATH:/root/.gem/ruby/2.6.0/bin"
+export PATH="$PATH:~/.local/bin"
 #. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 export VISUAL=vim
 export EDITOR="$VISUAL"
-export BROWSER="usr/bin/firefox"
 
 . $HOME/.asdf/asdf.sh
 
@@ -180,5 +179,6 @@ export XDG_CURRENT_DESKTOP=GNOME
 alias sicstus="wine ~/.wine/drive_c/Program\ Files/SICStus\ Prolog\ VC15\ 4.5.1/bin/sicstus-4.5.1.exe"
 alias rcom="ssh -p 3022 andrefmrocha@127.0.0.1"
 alias rcom2="ssh -p 3023 andrefmrocha@127.0.0.1"
-
+alias bazel="~/Projects/bazel/bazel-bin/src/bazel"
+alias otioconvert="~/.local/bin/otioconvert"
 eval $(thefuck --alias)

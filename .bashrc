@@ -8,6 +8,6 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 # >>> Added by cnchi installer
-BROWSER=/usr/bin/brave
+BROWSER=/usr/bin/vivaldi-stable
 EDITOR=/usr/bin/nano
 zsh
