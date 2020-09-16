@@ -2,8 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="~/.oh-my-zsh"
-  export ZPLUG_HOME=~/.zplug
+  export ZSH="$HOME/.oh-my-zsh"
+  export ZPLUG_HOME=$HOME/.zplug
 
   source $ZPLUG_HOME/init.zsh
 
@@ -27,7 +27,7 @@ zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $HOME/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -73,12 +73,12 @@ zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $HOME/.oh-my-zsh/plugins/*
+# Custom plugins may be added to $HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  git,
 #  svn
 )
 
@@ -128,7 +128,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+# export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -136,8 +136,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias zshconfig="mate $HOME/.zshrc"
+# alias ohmyzsh="mate $HOME/.oh-my-zsh"
 #
 #
 ###########################################################
@@ -156,29 +156,33 @@ zplug load
 
 #alias lcom="ssh lcom@127.0.0.1 -p 2222"
 #alias lcom2="ssh lcom@127.0.0.1 -p 2223"
-#alias android-studio="sh ~/Downloads/android-studio/bin/studio.sh"
-# alias pip ="python ~/.local/bin"
+#alias android-studio="sh $HOME/Downloads/android-studio/bin/studio.sh"
+# alias pip ="python $HOME/.local/bin"
 cs() { cd "$1" && ls; }
 alias gtree="git fetch && git log --graph --abbrev-commit --decorate --format=format:'%C(bold
 blue)%h%C(reset) - %C(bold
 cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)-
 %an%C(reset)' --all" -g
 #powerline-daemon -q
-export PATH="$PATH:~/Flutter/flutter/bin"
+export PATH="$PATH:/apps/Flutter/flutter/bin"
 export PATH="$PATH:/root/.gem/ruby/2.6.0/bin"
-export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:/apps/asdf/installs/nodejs/8.9.4/.npm/bin"
 #. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export BROWSER="/usr/bin/vivaldi-stable"
+export ASDF_DATA_DIR="/apps/asdf"
 
-. $HOME/.asdf/asdf.sh
+. /apps/asdf/asdf.sh
 
-. $HOME/.asdf/completions/asdf.bash
+. /apps/asdf/completions/asdf.bash
 
 export XDG_CURRENT_DESKTOP=GNOME
-alias sicstus="wine ~/.wine/drive_c/Program\ Files/SICStus\ Prolog\ VC15\ 4.5.1/bin/sicstus-4.5.1.exe"
+alias sicstus="wine $HOME/.wine/drive_c/Program\ Files/SICStus\ Prolog\ VC15\ 4.5.1/bin/sicstus-4.5.1.exe"
 alias rcom="ssh -p 3022 andrefmrocha@127.0.0.1"
 alias rcom2="ssh -p 3023 andrefmrocha@127.0.0.1"
-alias bazel="~/Projects/bazel/bazel-bin/src/bazel"
-alias otioconvert="~/.local/bin/otioconvert"
+alias bazel="$HOME/Projects/bazel/bazel-bin/src/bazel"
+alias otioconvert="$HOME/.local/bin/otioconvert"
+alias ssh="term=XTERM; ssh"
 eval $(thefuck --alias)
