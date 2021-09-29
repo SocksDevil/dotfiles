@@ -3,9 +3,8 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH="$HOME/.oh-my-zsh"
-  export ZPLUG_HOME=$HOME/.zplug
 
-  source $ZPLUG_HOME/init.zsh
+  source /usr/share/zsh/scripts/zplug/init.zsh 
 
  zplug clear
 #################################################################################
@@ -78,7 +77,7 @@ zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git,
+  git
 #  svn
 )
 
@@ -174,9 +173,8 @@ export EDITOR="$VISUAL"
 export BROWSER="/usr/bin/vivaldi-stable"
 export ASDF_DATA_DIR="/apps/asdf"
 
-. /apps/asdf/asdf.sh
+. /opt/asdf-vm/asdf.sh
 
-. /apps/asdf/completions/asdf.bash
 
 export XDG_CURRENT_DESKTOP=GNOME
 alias sicstus="wine $HOME/.wine/drive_c/Program\ Files/SICStus\ Prolog\ VC15\ 4.5.1/bin/sicstus-4.5.1.exe"

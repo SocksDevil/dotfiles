@@ -31,7 +31,7 @@ font pango:System San Francisco Display 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -147,6 +147,7 @@ assign [class="Spotify Premium"] $ws4
 assign [class="Termite"] $ws5
 assign [class="SwingTerminalFrame"] $ws5
 assign [class="VirtualBox Machine"] $ws5
+assign [class="Alacritty"] $ws5
 assign [class="Opera"] $ws2
 assign [class="Brave-browser"] $ws2
 assign [class="code"] $ws1
@@ -161,6 +162,7 @@ assign [class = "okular"] $ws6
 assign [class = "firefox"] $ws2
 assign [class = "Vivaldi-stable"] $ws2
 assign [class = "Signal"] $ws7
+assign [class = "TelegramDesktop"] $ws7
 assign [class = "Pulseeffects"] $ws9
 assign [class = "Blueman-manager"] $ws9
 assign [class = "Pavucontrol"] $ws9
@@ -205,7 +207,8 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-# bindsym $sup+l exec i3lock-fancy-dualmonitor
+bindsym $sup+l exec i3lock
+bindsym $sup+s exec i3lock && systemctl suspend
 bindsym $mod+q exec rofi -show drun -lines 5 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
 bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
 bindsym $mod+o exec rofi -show window -lines 5 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 11"
@@ -273,9 +276,10 @@ set $height 34
 # }
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl list short sinks | grep RUNNING | cut -f1) +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl list short sinks | grep RUNNING | cut -f1) -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl list short sinks | grep RUNNING | cut -f1) toggle # mute sound
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle # mute mic
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -285,7 +289,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
