@@ -163,15 +163,16 @@ blue)%h%C(reset) - %C(bold
 cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)-
 %an%C(reset)' --all" -g
 #powerline-daemon -q
-export PATH="$PATH:/apps/Flutter/flutter/bin"
+export PATH="$PATH:/$HOME/flutter/bin"
 export PATH="$PATH:/root/.gem/ruby/2.6.0/bin"
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:/apps/asdf/installs/nodejs/8.9.4/.npm/bin"
+export PATH="$PATH:~/.asdf/installs/nodejs/8.9.4/.npm/bin"
 #. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export BROWSER="/usr/bin/vivaldi-stable"
-export ASDF_DATA_DIR="/apps/asdf"
+
+#export ASDF_DATA_DIR="~/asdf"
 
 . /opt/asdf-vm/asdf.sh
 

@@ -41,7 +41,7 @@ include-file = ~/.config/polybar/bars.ini
 ; If unspecified, the application will pick the first one it finds.
 ; $ polybar -m | cut -d ':' -f 1
 ; $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor =${env:monitor:eDP1}
+monitor =${env:monitor:eDP-1}
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
@@ -288,7 +288,7 @@ cursor-scroll =
 ; If unspecified, the application will pick the first one it finds.
 ; $ polybar -m | cut -d ':' -f 1
 ; $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor = ${env:MONITOR:HDMI1}
+monitor = ${env:MONITOR:HDMI-1-0}
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev

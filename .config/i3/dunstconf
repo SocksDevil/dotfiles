@@ -65,6 +65,10 @@
     #geometry = "300x5-30+20"
     #geometry = "280x20-10+34"
     geometry = "220x5-5+1"
+    width = 220
+    height = 200
+    offset = 1
+
     # corner_radius = 6
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -126,7 +130,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
  
     # browser for opening urls in context menu
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/vivaldi-bin -new-tab
  
     # Align icons left/right/off
     icon_position = left
